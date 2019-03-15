@@ -1,18 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop"
 	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee"
 	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:task="http://www.springframework.org/schema/task"
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xsi:schemaLocation="
+		http://www.springframework.org/schema/aop
+		http://www.springframework.org/schema/aop/spring-aop.xsd
 		http://www.springframework.org/schema/beans
 		http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context
 		http://www.springframework.org/schema/context/spring-context.xsd
 		http://www.springframework.org/schema/mvc
 		http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/jee
+		http://www.springframework.org/schema/jee/spring-jee.xsd
+		http://www.springframework.org/schema/task
+		http://www.springframework.org/schema/task/spring-task.xsd
 		http://www.springframework.org/schema/tx 
 		http://www.springframework.org/schema/tx/spring-tx.xsd">
+
 
 	<!-- support for component scanning -->
 	<context:component-scan
@@ -28,27 +39,22 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 
-	<!-- define Database DataSource and connection pool -->
-	<bean id="myDataSource"
-		class="com.mchange.v2.c3p0.ComboPooledDataSource"
-		destroy-method="close">
-		<property name="driverClass" value="org.postgresql.Driver" />
-		<property name="jdbcUrl" 
-				  value="jdbc:postgresql://manny.db.elephantsql.com:5432/odqaxxgs?useSSL=false&amp;serverTimezone=UTC" />
-		<property name="user" value="odqaxxgs" />
-		<property name="password" value="pnPqpKVC8qV3KLZZXGE3C6OcQtQ9MNnV" />
-
-		<!-- connection pool properties for C3P0 -->
-		<property name="initialPoolSize" value="5" />
-		<property name="minPoolSize" value="5" />
-		<property name="maxPoolSize" value="20" />
-		<property name="maxIdleTime" value="30000" />
+	<!-- define database (and connection pool -> now not implemented) -->
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName"
+			value="org.postgresql.Driver" />
+		<property name="url"
+			value="jdbc:postgresql://manny.db.elephantsql.com:5432/odqaxxgs" />
+		<property name="username" value="odqaxxgs" />
+		<property name="password"
+			value="pnPqpKVC8qV3KLZZXGE3C6OcQtQ9MNnV" />
 	</bean>
 
 	<!-- setup Hibernate session factory -->
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
-		<property name="dataSource" ref="myDataSource" />
+		<property name="dataSource" ref="dataSource" />
 		<property name="packagesToScan"
 			value="pl.arkadiuszsas.eClinic.entity" />
 		<property name="hibernateProperties">
