@@ -24,7 +24,11 @@ public class Patient {
 
 	@ManyToOne
 	@JoinColumn(name = "doctor_id")
+<<<<<<< HEAD
 	private Doctor doctorId;
+=======
+	private int doctorId;
+>>>>>>> d1ff9a7190a70dfd1904d21ead8cd64d49b941a6
 
 	@NotNull
 	@Column(name = "file_id", unique = true)
@@ -80,7 +84,11 @@ public class Patient {
 	private boolean isInsurance;
 
 	public Patient() {
+<<<<<<< HEAD
 
+=======
+		
+>>>>>>> d1ff9a7190a70dfd1904d21ead8cd64d49b941a6
 	}
 
 	public int getPatientId() {
@@ -91,11 +99,19 @@ public class Patient {
 		this.patientId = patientId;
 	}
 
+<<<<<<< HEAD
 	public Doctor getDoctorId() {
 		return doctorId;
 	}
 
 	public void setDoctorId(Doctor doctorId) {
+=======
+	public int getDoctorId() {
+		return doctorId;
+	}
+
+	public void setDoctorId(int doctorId) {
+>>>>>>> d1ff9a7190a70dfd1904d21ead8cd64d49b941a6
 		this.doctorId = doctorId;
 	}
 
@@ -203,5 +219,9 @@ public class Patient {
 				+ cityName + ", postalCode=" + postalCode + ", firstVisitDate=" + firstVisitDate + ", lastVisitDate="
 				+ lastVisitDate + ", isInsurance=" + isInsurance + "]";
 	}
+<<<<<<< HEAD
 
+=======
+		
+>>>>>>> d1ff9a7190a70dfd1904d21ead8cd64d49b941a6
 }
