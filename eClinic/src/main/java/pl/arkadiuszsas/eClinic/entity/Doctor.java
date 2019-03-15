@@ -82,11 +82,11 @@ public class Doctor {
 		this.firstName = firstName;
 	}
 
-	public String getLaseName() {
+	public String getLastName() {
 		return lastName;
 	}
 
-	public void setLaseName(String lastName) {
+	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
 
@@ -148,7 +148,7 @@ public class Doctor {
 
 	@Override
 	public String toString() {
-		return "Doctor [doctorId=" + doctorId + ", firstName=" + firstName + ", laseName=" + lastName + ", dateOfBirth="
+		return "Doctor [doctorId=" + doctorId + ", firstName=" + firstName + ", lastName=" + lastName + ", dateOfBirth="
 				+ dateOfBirth + ", emailAddress=" + emailAddress + ", phoneNumber=" + phoneNumber + ", streetName="
 				+ streetName + ", cityName=" + cityName + ", postalCode=" + postalCode + ", salary=" + salary + "]";
 	}

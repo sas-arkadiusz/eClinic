@@ -37,11 +37,17 @@
 
 						<tr>
 							<td>${ theDoctor.firstName }</td>
-
+							<td>${ theDoctor.lastName }</td>
+							<td>${ theDoctor.dateOfBirth }</td>
+							<td>${ theDoctor.emailAddress }</td>
+							<td>${ theDoctor.phoneNumber }</td>
+							<td>${ theDoctor.streetName }</td>
+							<td>${ theDoctor.cityName }</td>
+							<td>${ theDoctor.postalCode }</td>
+							<td>${ theDoctor.salary }</td>
 						</tr>
 
 					</c:forEach>
-
 				</table>
 			</div>
 
