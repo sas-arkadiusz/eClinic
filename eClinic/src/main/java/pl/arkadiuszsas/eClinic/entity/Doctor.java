@@ -29,7 +29,7 @@ public class Doctor {
 	@NotNull
 	@Size(max = 50)
 	@Column(name = "last_name")
-	private String laseName;
+	private String lastName;
 	
 	@NotNull
 	@Column(name = "date_of_birth")
@@ -83,11 +83,11 @@ public class Doctor {
 	}
 
 	public String getLaseName() {
-		return laseName;
+		return lastName;
 	}
 
-	public void setLaseName(String laseName) {
-		this.laseName = laseName;
+	public void setLaseName(String lastName) {
+		this.lastName = lastName;
 	}
 
 	public Date getDateOfBirth() {
@@ -148,7 +148,7 @@ public class Doctor {
 
 	@Override
 	public String toString() {
-		return "Doctor [doctorId=" + doctorId + ", firstName=" + firstName + ", laseName=" + laseName + ", dateOfBirth="
+		return "Doctor [doctorId=" + doctorId + ", firstName=" + firstName + ", laseName=" + lastName + ", dateOfBirth="
 				+ dateOfBirth + ", emailAddress=" + emailAddress + ", phoneNumber=" + phoneNumber + ", streetName="
 				+ streetName + ", cityName=" + cityName + ", postalCode=" + postalCode + ", salary=" + salary + "]";
 	}

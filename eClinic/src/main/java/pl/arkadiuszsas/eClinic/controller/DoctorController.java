@@ -22,6 +22,8 @@ public class DoctorController {
 		
 		List<Doctor> allDoctors = doctorDAO.getDoctors();
 		
+		theModel.addAttribute("allDoctors", allDoctors);
+		
 		return "show-doctors";
 	}
 	
