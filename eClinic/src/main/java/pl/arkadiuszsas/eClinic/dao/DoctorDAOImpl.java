@@ -18,7 +18,6 @@ public class DoctorDAOImpl implements DoctorDAO {
 	private SessionFactory sessionFactory; // injected hibernate session factory
 	
 	@Override
-	@Transactional
 	public List<Doctor> getDoctors() {
 		
 		// get the current hibernate session

@@ -8,20 +8,20 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import pl.arkadiuszsas.eClinic.dao.DoctorDAO;
 import pl.arkadiuszsas.eClinic.entity.Doctor;
+import pl.arkadiuszsas.eClinic.service.DoctorService;
 
 @Controller
 @RequestMapping("/doctor")
 public class DoctorController {
 
 	@Autowired
-	private DoctorDAO doctorDAO;
+	private DoctorService doctorService; // injected doctor service
 	
 	@GetMapping("/showAllDoctors")
 	public String listDoctor(Model theModel) {
 		
-		List<Doctor> allDoctors = doctorDAO.getDoctors();
+		List<Doctor> allDoctors = doctorService.getDoctors();
 		
 		theModel.addAttribute("allDoctors", allDoctors);
 		
