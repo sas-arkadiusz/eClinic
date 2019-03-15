@@ -6,7 +6,7 @@
 
 <head>
 	<meta charset="ISO-8859-1">
-	<title>Insert title here</title>
+	<title>eClinic</title>
 	<link type="text/css"
 		  rel="stylesheet"
 		  href="${ pageContext.request.contextPath }/resources/css/style.css" >
@@ -14,18 +14,18 @@
 
 <body>
 
-	<div id="container">
+	<div class="container">
 
-		<div id="header">
+		<div class="header">
 			<h3>eClinic - Employed Doctors Manager</h3>
 		</div>
 
 		<div id="data">
 
-			<div id="tables">
+			<div class="tables">
 				<table>
-					<tr>
-						<th>First Name</th>
+					<tr class="table_header">
+						<th id="first_name">First Name</th>
 						<th>Last Name</th>
 						<th>Date of Birth</th>
 						<th>Email Address</th>

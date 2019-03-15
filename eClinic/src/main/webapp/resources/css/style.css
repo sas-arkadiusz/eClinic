@@ -1,3 +1,70 @@
-body {
-	background-color: blue;
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+body, html {
+	height: 100%;
+	font-family: sans-serif;
+}
+
+.container {
+	min-height: 100vh;
+	background-color: #c4d3f6;
+	align-items: center; 
+	justify-content : center;
+	padding: 33px 30px;
+}
+
+.header {
+	margin-bottom: 20px;
+	background-color: #4d4dff;
+	height: 50px;
+	font-size: 34px;
+	padding-top: 2px;
+	padding-left: 15px;
+	color: #fff;
+	border-radius: 5px;
+}
+
+.table_header {
+	background: #6c7ae0;
+	height: 25px;
+	padding-top: 2px;
+	color: #fff;
+	border-radius: 5px;
+}
+
+.tables {
+	border-radius: 5px;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+tr:hover {
+	background-color: #666666;
+}
+
+th {
+	width: 150px;
+}
+
+td {
+	height: 50px;
+	border-spacing: 0;
+	border-collapse: collapse;
+	min-width: 120px;
+	background-color: white;
+	color: black;
+	text-align: center;
+	border: none;
+	padding: 5px;
+	border-bottom: 2px solid #6c7ae0;
+}
+
+td:hover {
+	background-color: #aaaaaa;
 }
