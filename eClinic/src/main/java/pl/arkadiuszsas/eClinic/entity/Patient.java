@@ -82,7 +82,126 @@ public class Patient {
 	public Patient() {
 		
 	}
-	
-	
-	
+
+	public int getPatientId() {
+		return patientId;
+	}
+
+	public void setPatientId(int patientId) {
+		this.patientId = patientId;
+	}
+
+	public int getDoctorId() {
+		return doctorId;
+	}
+
+	public void setDoctorId(int doctorId) {
+		this.doctorId = doctorId;
+	}
+
+	public int getFileId() {
+		return fileId;
+	}
+
+	public void setFileId(int fileId) {
+		this.fileId = fileId;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public Date getDateOfBirth() {
+		return dateOfBirth;
+	}
+
+	public void setDateOfBirth(Date dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
+	}
+
+	public String getEmailAddress() {
+		return emailAddress;
+	}
+
+	public void setEmailAddress(String emailAddress) {
+		this.emailAddress = emailAddress;
+	}
+
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	public String getStreetName() {
+		return streetName;
+	}
+
+	public void setStreetName(String streetName) {
+		this.streetName = streetName;
+	}
+
+	public String getCityName() {
+		return cityName;
+	}
+
+	public void setCityName(String cityName) {
+		this.cityName = cityName;
+	}
+
+	public String getPostalCode() {
+		return postalCode;
+	}
+
+	public void setPostalCode(String postalCode) {
+		this.postalCode = postalCode;
+	}
+
+	public Date getFirstVisitDate() {
+		return firstVisitDate;
+	}
+
+	public void setFirstVisitDate(Date firstVisitDate) {
+		this.firstVisitDate = firstVisitDate;
+	}
+
+	public Date getLastVisitDate() {
+		return lastVisitDate;
+	}
+
+	public void setLastVisitDate(Date lastVisitDate) {
+		this.lastVisitDate = lastVisitDate;
+	}
+
+	public boolean isInsurance() {
+		return isInsurance;
+	}
+
+	public void setInsurance(boolean isInsurance) {
+		this.isInsurance = isInsurance;
+	}
+
+	@Override
+	public String toString() {
+		return "Patient [patientId=" + patientId + ", doctorId=" + doctorId + ", fileId=" + fileId + ", firstName="
+				+ firstName + ", lastName=" + lastName + ", dateOfBirth=" + dateOfBirth + ", emailAddress="
+				+ emailAddress + ", phoneNumber=" + phoneNumber + ", streetName=" + streetName + ", cityName="
+				+ cityName + ", postalCode=" + postalCode + ", firstVisitDate=" + firstVisitDate + ", lastVisitDate="
+				+ lastVisitDate + ", isInsurance=" + isInsurance + "]";
+	}
+		
 }
