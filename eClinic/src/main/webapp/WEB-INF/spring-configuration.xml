@@ -75,7 +75,7 @@
 	<tx:annotation-driven
 		transaction-manager="myTransactionManager" />
 
-	<!-- support for reading web resources: css, images, js, etc. -->
+	<!-- support for reading resources -->
 	<mvc:resources location="/resources/"
 		mapping="/resources/**"></mvc:resources>
 
