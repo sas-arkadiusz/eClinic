@@ -44,10 +44,6 @@ table {
 	border-collapse: collapse;
 }
 
-tr:hover {
-	background-color: #666666;
-}
-
 th {
 	width: 150px;
 }
