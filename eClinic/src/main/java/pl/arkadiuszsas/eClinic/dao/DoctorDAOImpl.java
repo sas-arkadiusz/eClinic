@@ -24,7 +24,7 @@ public class DoctorDAOImpl implements DoctorDAO {
 		// get the current hibernate session
 		Session currentHibernateSession = sessionFactory.getCurrentSession(); 
 		
-		Query<Doctor> hqlQuery = currentHibernateSession.createQuery("FROM doctor", Doctor.class);
+		Query<Doctor> hqlQuery = currentHibernateSession.createQuery("from Doctor", Doctor.class);
 		
 		// get the result of the query list
 		List<Doctor> allDoctors = hqlQuery.getResultList(); 
