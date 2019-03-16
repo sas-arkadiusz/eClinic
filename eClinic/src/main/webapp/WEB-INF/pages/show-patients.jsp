@@ -34,10 +34,9 @@
 						<th>City</th>
 						<th>Postal Code</th>
 						<th>File ID</th>
-						<th>Doctor ID</th>
 						<th>First Visit</th>
 						<th>Last Visit</th>
-						<th>Insurance</th>
+
 					</tr>
 
 					<c:forEach var="thePatient" items="${ allPatients }">
@@ -52,10 +51,11 @@
 							<td>${ thePatient.cityName }</td>
 							<td>${ thePatient.postalCode }</td>
 							<td>${ thePatient.fileId }</td>
-							<td>${ thePatient.doctorId }</td>
 							<td>${ thePatient.firstVisitDate }</td>
 							<td>${ thePatient.lastVisitDate }</td>
-							<td>${ thePatient.isInsurance }</td>
+							
+							<!-- Missing two attributes: doctorID, isInsurance -->
+
 						</tr>
 
 					</c:forEach>
