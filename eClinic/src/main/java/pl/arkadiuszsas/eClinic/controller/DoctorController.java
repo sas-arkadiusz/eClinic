@@ -32,6 +32,10 @@ public class DoctorController {
 	@GetMapping("/showAddDoctorForm")
 	public String showAddDoctorForm(Model theModel) {
 		
+		Doctor addedDoctor = new Doctor();
+		
+		theModel.addAttribute("addedDoctor", addedDoctor);
+		
 		return "add-doctor-form";
 	}
 	
