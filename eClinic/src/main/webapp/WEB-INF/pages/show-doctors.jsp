@@ -19,6 +19,9 @@
 			<h3>eClinic - Employed Doctors Manager</h3>
 		</div>
 
+		<form action="${ pageContext.request.contextPath }" method="GET">
+			<input type="submit" value="Back" class="add-button">
+		</form>
 		<input class="add-button" type="button" value="Add Doctor"
 			onclick="window.location.href='showAddDoctorForm'; return false;">
 

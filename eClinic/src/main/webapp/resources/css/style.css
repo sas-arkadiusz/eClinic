@@ -43,10 +43,16 @@ body, html {
 	border: 1px solid #4d4d4d;
 	font-size: 14px;
 	padding: 16px 31px;
+	float:left;
+   	margin-right:5px;
 }
 
 .add-button:hover {
 	background-color: #a6a6a6;
+}
+
+#data {
+	clear: both;
 }
 
 .tables {
