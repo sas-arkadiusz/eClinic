@@ -28,4 +28,11 @@ public class DoctorController {
 		return "show-doctors";
 	}
 	
+	
+	@GetMapping("/showAddDoctorForm")
+	public String showAddDoctorForm(Model theModel) {
+		
+		return "add-doctor-form";
+	}
+	
 }
