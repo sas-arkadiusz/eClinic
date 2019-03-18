@@ -12,8 +12,8 @@ body, html {
 .container {
 	min-height: 100vh;
 	background-color: #c4d3f6;
-	align-items: center; 
-	justify-content : center;
+	align-items: center;
+	justify-content: center;
 	padding: 33px 30px;
 }
 
@@ -34,6 +34,19 @@ body, html {
 	padding-top: 2px;
 	color: #fff;
 	border-radius: 5px;
+}
+
+.add-button {
+	margin-bottom: 25px;
+	background-color: #cccccc;
+	border-radius: 14px;
+	border: 1px solid #4d4d4d;
+	font-size: 14px;
+	padding: 16px 31px;
+}
+
+.add-button:hover {
+	background-color: #a6a6a6;
 }
 
 .tables {

@@ -5,11 +5,10 @@
 <html>
 
 <head>
-	<meta charset="ISO-8859-1">
-	<title>eClinic</title>
-	<link type="text/css"
-		  rel="stylesheet"
-		  href="${ pageContext.request.contextPath }/resources/css/style.css" >
+<meta charset="ISO-8859-1">
+<title>eClinic</title>
+<link type="text/css" rel="stylesheet"
+	href="${ pageContext.request.contextPath }/resources/css/style.css">
 </head>
 
 <body>
@@ -19,6 +18,9 @@
 		<div class="header">
 			<h3>eClinic - Employed Doctors Manager</h3>
 		</div>
+
+		<input class="add-button" type="button" value="Add Doctor"
+			onclick="window.location.href='showAddDoctorForm'; return false;">
 
 		<div id="data">
 
