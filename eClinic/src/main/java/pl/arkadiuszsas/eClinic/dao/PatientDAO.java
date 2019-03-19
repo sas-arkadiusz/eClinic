@@ -7,4 +7,6 @@ import pl.arkadiuszsas.eClinic.entity.Patient;
 public interface PatientDAO {
 
 	public List<Patient> getPatients();
+
+	public void savePatient(Patient addedPatient);
 }
