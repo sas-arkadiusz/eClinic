@@ -6,7 +6,7 @@
 * [Setup](#setup)
 
 ## eClinic - General Info
-This repository contains web app to for managing a clinic. <br>
+This repository contains web application for managing a clinic. <br>
 At the end of the programming process, the application will implement all of the CRUD functions.
 
 ## Technologies
