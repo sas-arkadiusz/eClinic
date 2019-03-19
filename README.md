@@ -5,7 +5,7 @@
 * [Technologies](#technologies)
 * [Setup](#setup)
 
-##eClinic - General Info
+## eClinic - General Info
 This repository contains web app to for managing a clinic. <br>
 At the end of the programming process, the application will implement all of the CRUD functions.
 
