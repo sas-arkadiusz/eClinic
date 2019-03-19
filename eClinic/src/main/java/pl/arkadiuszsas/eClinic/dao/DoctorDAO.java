@@ -6,5 +6,7 @@ import pl.arkadiuszsas.eClinic.entity.Doctor;
 
 public interface DoctorDAO {
 
-	public List<Doctor> getDoctors();	
+	public List<Doctor> getDoctors();
+
+	public void saveDoctor(Doctor addedDoctor);	
 }
