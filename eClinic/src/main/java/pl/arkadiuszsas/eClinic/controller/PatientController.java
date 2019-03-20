@@ -46,13 +46,15 @@ public class PatientController {
 		
 		int chosenDoctorId = 0;
 		theModel.addAttribute("chosenDoctorId", chosenDoctorId);
+		theModel.addAttribute("getChosenDoctorId", 2);
 
 		return "add-patient-form";
 	}
 
 	@PostMapping("/saveNewPatient")
-	public String saveNewPatient(@ModelAttribute("addPatient") Patient addedPatient) {
+	public String saveNewPatient(@ModelAttribute("addPatient") Patient addedPatient, Model theModel) {
 
+		theModel.addAttribute("getChosenDoctorId", 2);
 		patientService.savePatient(addedPatient);
 
 		return "redirect:/patient/showAllPatients";
