@@ -29,4 +29,4 @@ This project is created with:
 ## Application
 
 * Add Patient Form: <br><br>
-![add-patient-form](https://imgur.com/vsX4W0V) <br>
+![add-patient-form](https://i.imgur.com/vsX4W0V.gifv) <br>
