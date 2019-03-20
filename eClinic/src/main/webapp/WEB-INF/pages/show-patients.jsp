@@ -5,11 +5,10 @@
 <html>
 
 <head>
-	<meta charset="ISO-8859-1">
-	<title>eClinic</title>
-	<link type="text/css"
-		  rel="stylesheet"
-		  href="${ pageContext.request.contextPath }/resources/css/style.css" >
+<meta charset="ISO-8859-1">
+<title>eClinic</title>
+<link type="text/css" rel="stylesheet"
+	href="${ pageContext.request.contextPath }/resources/css/style.css">
 </head>
 
 <body>
@@ -19,6 +18,12 @@
 		<div class="header">
 			<h3>eClinic - Patients Manager</h3>
 		</div>
+
+		<form action="${ pageContext.request.contextPath }" method="GET">
+			<input type="submit" value="Back" class="add-button">
+		</form>
+		<input class="add-button" type="button" value="Add Patient"
+			onclick="window.location.href='showAddPatientForm'; return false;">
 
 		<div id="data">
 
@@ -57,7 +62,7 @@
 							<td>${ thePatient.isInsurance}</td>
 							<td>${ thePatient.firstVisitDate }</td>
 							<td>${ thePatient.lastVisitDate }</td>
-							
+
 							<!-- Missing one attribute: doctorID -->
 
 						</tr>
