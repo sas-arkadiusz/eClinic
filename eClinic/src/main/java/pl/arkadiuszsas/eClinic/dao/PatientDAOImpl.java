@@ -39,17 +39,11 @@ public class PatientDAOImpl implements PatientDAO {
 		
 		// get the current hibernate session
 		Session currentHibernateSession = sessionFactory.getCurrentSession();
-		
-		Doctor theDoctor = new Doctor();
-		theDoctor.setDoctorId(1);
-		
-		addedPatient.setDoctorId(theDoctor);
 			
 		// find and set proper patientId
 		Query hqlQuery = currentHibernateSession.createQuery("select max(patientId) from Patient", Integer.class);
 		Integer lastPatientId = (Integer)hqlQuery.getSingleResult();
-		addedPatient.setPatientId(lastPatientId + 1);		
-
+		addedPatient.setPatientId(lastPatientId + 1);	
 		
 		// save the addedPatient
 		currentHibernateSession.save(addedPatient);

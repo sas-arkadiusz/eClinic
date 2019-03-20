@@ -30,7 +30,19 @@
 		base-package="pl.arkadiuszsas.eClinic" />
 
 	<!-- support for conversion, formatting and validation support -->
-	<mvc:annotation-driven />
+	<mvc:annotation-driven
+		conversion-service="conversionService" />
+
+	<!-- define conversion service -->
+	<bean id="conversionService"
+		class="org.springframework.context.support.ConversionServiceFactoryBean">
+		<property name="converters">
+			<list>
+				<bean
+					class="pl.arkadiuszsas.eClinic.converter.StringToDoctorConverter" />
+			</list>
+		</property>
+	</bean>
 
 	<!-- define Spring MVC view resolver -->
 	<bean

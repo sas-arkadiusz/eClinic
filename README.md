@@ -20,3 +20,6 @@ This project is created with:
 * CSS
 
 ## Setup
+1. Import this project as Maven project.
+2. Run imported project on your Tomcat server.
+3. Open http://http://localhost:8080/eClinic/ to visit home page.
