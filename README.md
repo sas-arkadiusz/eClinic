@@ -28,5 +28,8 @@ This project is created with:
 
 ## Application
 
-* Add Patient Form: <br><br>
+* Create Function -> eg. Add Patient Form: <br><br>
 ![add-patient-form](https://i.imgur.com/3xgf2X6.gif) <br>
+
+* Read Function -> eg. Show All Doctors: <br><br>
+![show-all-doctors](https://i.imgur.com/UrAWC7V.gif) <br>
