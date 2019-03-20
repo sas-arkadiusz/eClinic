@@ -188,11 +188,11 @@ public class Patient {
 		this.lastVisitDate = lastVisitDate;
 	}
 
-	public boolean getisInsurance() {
+	public boolean getIsInsurance() {
 		return isInsurance;
 	}
 
-	public void setInsurance(boolean isInsurance) {
+	public void setIsInsurance(boolean isInsurance) {
 		this.isInsurance = isInsurance;
 	}
 

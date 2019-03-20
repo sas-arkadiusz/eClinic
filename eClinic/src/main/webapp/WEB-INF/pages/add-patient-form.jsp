@@ -3,7 +3,7 @@
 
 <!-- Spring MVC support for forms -->
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ page import="pl.arkadiuszsas.eClinic.entity.Doctor" %>
+<%@ page import="pl.arkadiuszsas.eClinic.entity.Doctor"%>
 
 <!DOCTYPE html>
 
@@ -73,16 +73,15 @@
 					</tr>
 					<tr>
 						<td>Is Insurance:</td>
-						<td><form:input path="isInsurance" /></td>
+						<td><form:checkbox path ="isInsurance" /></td>
 					</tr>
 					<tr>
-						<td>Doctor ID: </td>
+						<td>Doctor ID:</td>
 						<td><form:select path="doctorId">
-							<form:option value="0" label="Select an Option" />
-							<form:options items="${ allDoctorsList }"  
-										  itemLabel="doctorId"
-										  itemValue="doctorId" />
-						</form:select></td>
+								<form:option value="0" label="Select an Option" />
+								<form:options items="${ allDoctorsList }" itemLabel="doctorId"
+									itemValue="doctorId" />
+							</form:select></td>
 					</tr>
 
 					<tr>
