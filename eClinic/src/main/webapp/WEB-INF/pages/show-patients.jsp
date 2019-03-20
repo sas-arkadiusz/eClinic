@@ -23,7 +23,7 @@
 			<input type="submit" value="Back" class="add-button">
 		</form>
 		<input class="add-button" type="button" value="Add Patient"
-			onclick="window.location.href='showAddPatientForm'; return false;">
+			onclick="window.location.href='addPatientForm'; return false;">
 
 		<div id="data">
 
@@ -46,7 +46,7 @@
 
 					</tr>
 
-					<c:forEach var="thePatient" items="${ allPatients }">
+					<c:forEach var="thePatient" items="${ allPatientsList }">
 
 						<tr>
 							<td>${ thePatient.firstName }</td>

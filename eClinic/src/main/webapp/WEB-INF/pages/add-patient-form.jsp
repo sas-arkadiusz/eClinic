@@ -27,7 +27,7 @@
 
 		<div class="adding_form">
 
-			<form:form action="saveNewPatient" modelAttribute="addPatient"
+			<form:form action="saveNewPatient" modelAttribute="addedPatient"
 				method="POST">
 
 				<table>
@@ -79,7 +79,7 @@
 						<td>Doctor ID: </td>
 						<td><form:select path="doctorId">
 							<form:option value="0" label="Select an Option" />
-							<form:options items="${ allDoctors }"  
+							<form:options items="${ allDoctorsList }"  
 										  itemLabel="doctorId"
 										  itemValue="doctorId" />
 						</form:select></td>

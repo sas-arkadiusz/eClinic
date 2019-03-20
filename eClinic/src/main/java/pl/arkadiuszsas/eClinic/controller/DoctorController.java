@@ -18,7 +18,7 @@ import pl.arkadiuszsas.eClinic.service.DoctorService;
 public class DoctorController {
 
 	@Autowired
-	private DoctorService doctorService; // injected doctor service
+	private DoctorService doctorService; // injected doctorService to handle Doctor objects
 	
 	@GetMapping("/showAllDoctors")
 	public String listDoctor(Model theModel) {

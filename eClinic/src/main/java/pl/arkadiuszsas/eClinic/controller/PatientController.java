@@ -20,38 +20,35 @@ import pl.arkadiuszsas.eClinic.service.PatientService;
 public class PatientController {
 
 	@Autowired
-	private PatientService patientService; // injected patient service
+	private PatientService patientService; // injected patientService to handle Patient objects
 
 	@Autowired
-	private DoctorService doctorService; // injected doctor service
+	private DoctorService doctorService; // injected doctorService to handle Doctor objects
 
 	@GetMapping("/showAllPatients")
 	public String listPatient(Model theModel) {
 
-		List<Patient> allPatients = patientService.getPatients();
+		List<Patient> allPatientsList = patientService.getPatients();
 
-		theModel.addAttribute("allPatients", allPatients);
+		theModel.addAttribute("allPatientsList", allPatientsList);
 
 		return "show-patients";
 	}
 
-	@GetMapping("/showAddPatientForm")
+	@GetMapping("/addPatientForm")
 	public String showAddPatientForm(Model theModel) {
 		
-		Patient addPatient = new Patient();
-		theModel.addAttribute("addPatient", addPatient);
-		
-		List<Doctor> allDoctors = doctorService.getDoctors();
-		theModel.addAttribute("allDoctors", allDoctors);
-		
-		int chosenDoctorId = 0;
-		theModel.addAttribute("chosenDoctorId", chosenDoctorId);
+		Patient addedPatient = new Patient();
+		theModel.addAttribute("addedPatient", addedPatient);
+				
+		List<Doctor> allDoctorsList = doctorService.getDoctors();
+		theModel.addAttribute("allDoctorsList", allDoctorsList);
 
 		return "add-patient-form";
 	}
 
 	@PostMapping("/saveNewPatient")
-	public String saveNewPatient(@ModelAttribute("addPatient") Patient addedPatient, Model theModel) {
+	public String saveNewPatient(@ModelAttribute("addedPatient") Patient addedPatient, Model theModel) {
 
 		patientService.savePatient(addedPatient);
 
