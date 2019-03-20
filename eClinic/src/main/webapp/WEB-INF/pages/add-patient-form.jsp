@@ -63,17 +63,12 @@
 						<td>Postal Code:</td>
 						<td><form:input path="postalCode" /></td>
 					</tr>
-
-					<tr>
-						<td>File ID:</td>
-						<td><form:input path="fileId" /></td>
-					</tr>
 					<tr>
 						<td>First Visit Date:</td>
 						<td><form:input path="firstVisitDate" /></td>
 					</tr>
 					<tr>
-						<td>First Visit Date:</td>
+						<td>Last Visit Date:</td>
 						<td><form:input path="lastVisitDate" /></td>
 					</tr>
 					<tr>

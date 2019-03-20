@@ -45,6 +45,10 @@ public class PatientDAOImpl implements PatientDAO {
 		Integer lastPatientId = (Integer)hqlQuery.getSingleResult();
 		addedPatient.setPatientId(lastPatientId + 1);	
 		
+		hqlQuery = currentHibernateSession.createQuery("select max(fileId) from Patient", Integer.class);
+		Integer lastFileId = (Integer)hqlQuery.getSingleResult();
+		addedPatient.setFileId(lastFileId + 1);
+		
 		// save the addedPatient
 		currentHibernateSession.save(addedPatient);
 		

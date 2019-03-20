@@ -4,6 +4,8 @@
 * [General Info](#eclinic---general-info)
 * [Technologies](#technologies)
 * [Setup](#setup)
+* [Application](#application)
+
 
 ## eClinic - General Info
 This repository contains web application for managing a clinic. <br>
@@ -23,3 +25,8 @@ This project is created with:
 1. Import this project as Maven project.
 2. Run imported project on your Tomcat server.
 3. Open http://http://localhost:8080/eClinic/ to visit home page.
+
+## Application
+
+* Add Patient Form: <br><br>
+![add-patient-form](https://imgur.com/vsX4W0V) <br>
