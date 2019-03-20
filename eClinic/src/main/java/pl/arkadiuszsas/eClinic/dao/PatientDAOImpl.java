@@ -44,14 +44,12 @@ public class PatientDAOImpl implements PatientDAO {
 		theDoctor.setDoctorId(1);
 		
 		addedPatient.setDoctorId(theDoctor);
-	
-		
+			
+		// find and set proper patientId
 		Query hqlQuery = currentHibernateSession.createQuery("select max(patientId) from Patient", Integer.class);
-		Integer i = (Integer)hqlQuery.getSingleResult();
-		
-		addedPatient.setPatientId(i + 1);
-		
-		// problem resolved with int casting, don't forget to refactor
+		Integer lastPatientId = (Integer)hqlQuery.getSingleResult();
+		addedPatient.setPatientId(lastPatientId + 1);		
+
 		
 		// save the addedPatient
 		currentHibernateSession.save(addedPatient);
