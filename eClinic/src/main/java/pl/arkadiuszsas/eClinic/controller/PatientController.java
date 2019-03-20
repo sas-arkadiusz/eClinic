@@ -41,6 +41,7 @@ public class PatientController {
 		Patient addedPatient = new Patient();
 		theModel.addAttribute("addedPatient", addedPatient);
 				
+		// necessary to display all doctors
 		List<Doctor> allDoctorsList = doctorService.getDoctors();
 		theModel.addAttribute("allDoctorsList", allDoctorsList);
 
