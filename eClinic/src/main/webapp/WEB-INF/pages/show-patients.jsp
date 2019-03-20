@@ -34,6 +34,7 @@
 						<th>City</th>
 						<th>Postal Code</th>
 						<th>File ID</th>
+						<th>Is Insurance</th>
 						<th>First Visit</th>
 						<th>Last Visit</th>
 
@@ -51,10 +52,11 @@
 							<td>${ thePatient.cityName }</td>
 							<td>${ thePatient.postalCode }</td>
 							<td>${ thePatient.fileId }</td>
+							<td>${ thePatient.isInsurance}</td>
 							<td>${ thePatient.firstVisitDate }</td>
 							<td>${ thePatient.lastVisitDate }</td>
 							
-							<!-- Missing two attributes: doctorID, isInsurance -->
+							<!-- Missing one attribute: doctorID -->
 
 						</tr>
 
