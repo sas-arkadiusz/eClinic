@@ -43,7 +43,7 @@
 						<th>Is Insurance</th>
 						<th>First Visit</th>
 						<th>Last Visit</th>
-						<th></th>
+						<th colspan="2">Action</th>
 
 					</tr>
 
@@ -51,6 +51,10 @@
 
 						<c:url var="updateLink" value="updatePatientForm">
 							<c:param name="updatedPatientId" value="${ thePatient.patientId }" />
+						</c:url>
+						
+						<c:url var="deleteLink" value="deletePatient">
+							<c:param name="deletedPatientId" value="${ thePatient.patientId }" />
 						</c:url>
 
 						<tr>
@@ -68,6 +72,9 @@
 							<td>${ thePatient.firstVisitDate }</td>
 							<td>${ thePatient.lastVisitDate }</td>
 							<td><a href="${ updateLink }">Update</a></td>
+							<td><a href="${ deleteLink }"
+								   onclick="if (!(confirm('Are you sure you want to delete this patient? This operation can not be undone.'))) return false;">
+							Delete</a></td>
 
 						</tr>
 
