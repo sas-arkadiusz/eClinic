@@ -3,6 +3,8 @@
 
 <!-- Spring MVC support for forms -->
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page import="pl.arkadiuszsas.eClinic.entity.Doctor"%>
 
 <!DOCTYPE html>
@@ -79,11 +81,11 @@
 					</tr>
 					<tr>
 						<td>Doctor ID:</td>
-						<td><form:select path="doctorId">
-								<form:option value="0" label="Select an Option" />
-								<form:options items="${ allDoctorsList }" itemLabel="doctorId"
-									itemValue="doctorId" />
-							</form:select></td>
+						<td><select name="doctorId">
+							<c:forEach var="theDoctor" items="${ allDoctorsList }">
+								<option value="${theDoctor.doctorId}""> ${ theDoctor.doctorId} - ${ theDoctor.firstName } ${ theDoctor.lastName }</option>
+							</c:forEach>
+						</select></td>
 					</tr>
 
 					<tr>
