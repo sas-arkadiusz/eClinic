@@ -36,4 +36,12 @@ public class DoctorServiceImpl implements DoctorService {
 		return doctorDAO.getDoctor(doctorId);
 	}
 
+	@Override
+	@Transactional
+	public void deleteDoctor(int doctorId) {
+		
+		doctorDAO.deleteDoctor(doctorId);
+		
+	}
+
 }

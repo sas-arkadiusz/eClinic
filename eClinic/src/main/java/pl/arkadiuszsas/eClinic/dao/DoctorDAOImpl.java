@@ -54,4 +54,18 @@ public class DoctorDAOImpl implements DoctorDAO {
 		return requestedDoctor;
 	}
 
+	@Override
+	public void deleteDoctor(int doctorId) {
+		
+		// get the current hibernate session
+		Session currentHibernateSession = sessionFactory.getCurrentSession();
+		
+		// delete the Doctor
+		Query hqlQuery = currentHibernateSession.createQuery("delete from Doctor where doctorId = :deletedDoctorId");
+		
+		hqlQuery.setParameter("deletedDoctorId", doctorId);
+		
+		hqlQuery.executeUpdate();
+	}
+
 }

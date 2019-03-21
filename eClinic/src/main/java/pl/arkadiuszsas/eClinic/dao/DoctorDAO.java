@@ -10,5 +10,7 @@ public interface DoctorDAO {
 
 	public void saveDoctor(Doctor addedDoctor);
 
-	public Doctor getDoctor(int doctorId);	
+	public Doctor getDoctor(int doctorId);
+
+	public void deleteDoctor(int doctorId);	
 }

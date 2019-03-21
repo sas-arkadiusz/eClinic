@@ -39,13 +39,17 @@
 						<th>City</th>
 						<th>Postal Code</th>
 						<th>Salary</th>
-						<th></th>
+						<th colspan="2">Action</th>						
 					</tr>
 
 					<c:forEach var="theDoctor" items="${ allDoctors }">
 
 						<c:url var="updateLink" value="updateDoctorForm">
 							<c:param name="updatedDoctorId" value="${ theDoctor.doctorId }" />
+						</c:url>
+						
+						<c:url var="deleteLink" value="deleteDoctor"> 
+							<c:param name="deletedDoctorId" value="${ theDoctor.doctorId }" />
 						</c:url>
 
 						<tr>
@@ -59,6 +63,9 @@
 							<td>${ theDoctor.postalCode }</td>
 							<td>${ theDoctor.salary }</td>
 							<td><a href="${ updateLink }">Update</a></td>
+							<td><a href="${ deleteLink }"
+							       onclick="if (!(confirm('Are you sure you want to delete this doctor? This operation can not be undone.'))) return false;">
+							       Delete</a></td>
 						</tr>
 
 					</c:forEach>

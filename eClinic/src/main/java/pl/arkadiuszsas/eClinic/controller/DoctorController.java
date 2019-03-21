@@ -62,4 +62,12 @@ public class DoctorController {
 		return "add-doctor-form";
 	}
 	
+	@GetMapping("/deleteDoctor")
+	public String deleteDoctor(@RequestParam("deletedDoctorId") int deletedDoctorId) {
+		
+		doctorService.deleteDoctor(deletedDoctorId);
+		
+		return "redirect:/doctor/showAllDoctors";
+	}
+	
 }
