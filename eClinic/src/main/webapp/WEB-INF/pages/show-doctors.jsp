@@ -39,9 +39,14 @@
 						<th>City</th>
 						<th>Postal Code</th>
 						<th>Salary</th>
+						<th></th>
 					</tr>
 
 					<c:forEach var="theDoctor" items="${ allDoctors }">
+
+						<c:url var="updateLink" value="doctor/updateDoctorForm">
+							<c:param name="doctorId" value="${ theDoctor.doctorId }" />
+						</c:url>
 
 						<tr>
 							<td>${ theDoctor.firstName }</td>
@@ -53,6 +58,7 @@
 							<td>${ theDoctor.cityName }</td>
 							<td>${ theDoctor.postalCode }</td>
 							<td>${ theDoctor.salary }</td>
+							<td><a href="${ updateLink }">Update</a></td>
 						</tr>
 
 					</c:forEach>
