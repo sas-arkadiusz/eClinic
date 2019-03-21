@@ -82,5 +82,21 @@ td {
 }
 
 td:hover {
-	background-color: #aaaaaa;
+	background-color: #bbbbbb;
+	transition-duration: .7s;
+
+}
+
+a, a:visited {
+	text-decoration: none;
+	color: #4d4dff;
+}
+
+td a {
+	display: block;
+	cursor: pointer;
+}
+
+td:hover a {
+	color: #001a66;
 }
