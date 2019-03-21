@@ -12,5 +12,7 @@ public interface DoctorDAO {
 
 	public Doctor getDoctor(int doctorId);
 
-	public void deleteDoctor(int doctorId);	
+	public void deleteDoctor(int doctorId);
+
+	public List<Doctor> searchDoctors(String doctorsLastName);	
 }

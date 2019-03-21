@@ -31,7 +31,7 @@
 			onclick="window.location.href='addDoctorForm'; return false;">
 			
 		<div class="search">
-			<form:form action="search" method="GET">
+			<form:form action="searchDoctor" method="GET">
 				<input type="text" name="requestesDoctorLastName">
 				<input class="search-button" type="submit" value="Search">
 			</form:form>

@@ -13,4 +13,6 @@ public interface DoctorService {
 	public Doctor getDoctor(int doctorId);
 
 	public void deleteDoctor(int doctorId);
+
+	public List<Doctor> searchDoctors(String doctorsLastName);
 }

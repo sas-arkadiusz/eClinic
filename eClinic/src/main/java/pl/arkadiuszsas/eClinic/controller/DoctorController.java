@@ -70,4 +70,14 @@ public class DoctorController {
 		return "redirect:/doctor/showAllDoctors";
 	}
 	
+	@GetMapping("/searchDoctor")
+	public String searchDoctors(@RequestParam("requestesDoctorLastName") String doctorsLastName, Model theModel) {
+		
+		List<Doctor> searchedDoctorsList = doctorService.searchDoctors(doctorsLastName);
+		
+		theModel.addAttribute("allDoctors", searchedDoctorsList);
+		
+		return "show-doctors";
+	}
+	
 }

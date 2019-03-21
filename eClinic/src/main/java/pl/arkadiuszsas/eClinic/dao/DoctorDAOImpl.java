@@ -68,4 +68,26 @@ public class DoctorDAOImpl implements DoctorDAO {
 		hqlQuery.executeUpdate();
 	}
 
+	@Override
+	public List<Doctor> searchDoctors(String doctorsLastName) {
+	
+		// get the current hibernate session
+		Session currentHibernateSesssion = sessionFactory.getCurrentSession();
+		
+		Query hqlQuery = null;
+		
+		if(doctorsLastName != null && doctorsLastName.trim().length() > 0) {
+			
+			hqlQuery = currentHibernateSesssion.createQuery("from Doctor where lower(lastName) like :doctorsLastName", Doctor.class);
+			hqlQuery.setParameter("doctorsLastName", doctorsLastName.toLowerCase());			
+		}
+		else {
+			hqlQuery = currentHibernateSesssion.createQuery("from Doctor", Doctor.class);
+		}
+		
+		List<Doctor> requestedDoctorsList = hqlQuery.getResultList();
+		
+		return requestedDoctorsList;
+	}
+
 }

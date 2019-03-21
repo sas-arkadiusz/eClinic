@@ -43,4 +43,11 @@ public class DoctorServiceImpl implements DoctorService {
 		doctorDAO.deleteDoctor(doctorId);		
 	}
 
+	@Override
+	@Transactional
+	public List<Doctor> searchDoctors(String doctorsLastName) {
+		
+		return doctorDAO.searchDoctors(doctorsLastName);
+	}
+
 }
