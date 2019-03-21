@@ -23,7 +23,7 @@
 			<input type="submit" value="Back" class="add-button">
 		</form>
 		<input class="add-button" type="button" value="Add Doctor"
-			onclick="window.location.href='showAddDoctorForm'; return false;">
+			onclick="window.location.href='addDoctorForm'; return false;">
 
 		<div id="data">
 

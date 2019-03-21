@@ -31,7 +31,7 @@ public class DoctorController {
 	}
 	
 	
-	@GetMapping("/showAddDoctorForm")
+	@GetMapping("/addDoctorForm")
 	public String showAddDoctorForm(Model theModel) {
 		
 		Doctor addDoctor = new Doctor();
