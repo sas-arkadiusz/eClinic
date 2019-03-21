@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import pl.arkadiuszsas.eClinic.entity.Doctor;
+import pl.arkadiuszsas.eClinic.entity.Patient;
 import pl.arkadiuszsas.eClinic.service.DoctorService;
 
 @Controller
@@ -32,7 +33,7 @@ public class DoctorController {
 	
 	
 	@GetMapping("/addDoctorForm")
-	public String showAddDoctorForm(Model theModel) {
+	public String addDoctorForm(Model theModel) {
 		
 		Doctor addDoctor = new Doctor();
 		
@@ -43,7 +44,7 @@ public class DoctorController {
 	
 	@PostMapping("/saveNewDoctor")
 	public String saveNewDoctor(@ModelAttribute("addDoctor") Doctor addedDoctor) {
-		
+				
 		doctorService.saveDoctor(addedDoctor);
 		
 		return "redirect:/doctor/showAllDoctors";

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import pl.arkadiuszsas.eClinic.entity.Doctor;
+import pl.arkadiuszsas.eClinic.entity.Patient;
 
 @Repository
 public class DoctorDAOImpl implements DoctorDAO {
