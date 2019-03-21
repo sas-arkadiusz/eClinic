@@ -29,4 +29,11 @@ public class DoctorServiceImpl implements DoctorService {
 		doctorDAO.saveDoctor(addedDoctor);
 	}
 
+	@Override
+	@Transactional
+	public Doctor getDoctor(int doctorId) {
+
+		return doctorDAO.getDoctor(doctorId);
+	}
+
 }

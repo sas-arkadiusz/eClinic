@@ -42,4 +42,16 @@ public class DoctorDAOImpl implements DoctorDAO {
 		currentHibernateSession.save(addedDoctor);
 	}
 
+	@Override
+	public Doctor getDoctor(int doctorId) {
+		
+		// get the current hibernate session
+		Session currentHibernateSession = sessionFactory.getCurrentSession();
+		
+		// retrieve the requested Doctor
+		Doctor requestedDoctor = currentHibernateSession.get(Doctor.class, doctorId);
+
+		return requestedDoctor;
+	}
+
 }

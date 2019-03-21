@@ -44,8 +44,8 @@
 
 					<c:forEach var="theDoctor" items="${ allDoctors }">
 
-						<c:url var="updateLink" value="doctor/updateDoctorForm">
-							<c:param name="doctorId" value="${ theDoctor.doctorId }" />
+						<c:url var="updateLink" value="updateDoctorForm">
+							<c:param name="updatedDoctorId" value="${ theDoctor.doctorId }" />
 						</c:url>
 
 						<tr>

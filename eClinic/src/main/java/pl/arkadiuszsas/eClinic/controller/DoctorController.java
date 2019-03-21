@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import pl.arkadiuszsas.eClinic.entity.Doctor;
 import pl.arkadiuszsas.eClinic.entity.Patient;
@@ -48,6 +49,17 @@ public class DoctorController {
 		doctorService.saveDoctor(addedDoctor);
 		
 		return "redirect:/doctor/showAllDoctors";
+	}
+	
+	@GetMapping("/updateDoctorForm")
+	public String updateDoctorForm(@RequestParam("updatedDoctorId") int updatedDoctorId, Model theModel) {
+		
+		Doctor updatedDoctor = doctorService.getDoctor(updatedDoctorId);
+		
+		// added attribute name has to be equal to modelAttribute in add-doctor-form.jsp
+		theModel.addAttribute("addDoctor", updatedDoctor);
+		
+		return "add-doctor-form";
 	}
 	
 }
