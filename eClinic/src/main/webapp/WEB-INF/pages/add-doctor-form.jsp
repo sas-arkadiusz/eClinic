@@ -28,6 +28,8 @@
 
 			<form:form action="saveNewDoctor" modelAttribute="addDoctor"
 				method="POST">
+				
+				<form:hidden path="doctorId" />
 
 				<table>
 					<tr>
