@@ -38,10 +38,10 @@ public class PatientController {
 
 	@GetMapping("/addPatientForm")
 	public String showAddPatientForm(Model theModel) {
-		
+
 		Patient addedPatient = new Patient();
 		theModel.addAttribute("addedPatient", addedPatient);
-				
+
 		// necessary to display all doctors
 		List<Doctor> allDoctorsList = doctorService.getDoctors();
 		theModel.addAttribute("allDoctorsList", allDoctorsList);
@@ -56,19 +56,23 @@ public class PatientController {
 
 		return "redirect:/patient/showAllPatients";
 	}
-	
+
 	@GetMapping("/updatePatientForm")
 	public String updatePatientForm(@RequestParam("updatedPatientId") int updatedPatientId, Model theModel) {
-		
+
 		Patient updatedPatient = patientService.getPatient(updatedPatientId);
-		
+
 		// assign the current Doctor to the Patient
 		Doctor updatedDoctor = doctorService.getDoctor(updatedPatient.getDoctorId().getDoctorId());
 		updatedPatient.setDoctorId(updatedDoctor);
-		
+
 		// added attribute name has to be equal to modelAttribute in add-doctor-form.jsp
 		theModel.addAttribute("addedPatient", updatedPatient);
-		
+
+		// necessary to display all doctors
+		List<Doctor> allDoctorsList = doctorService.getDoctors();
+		theModel.addAttribute("allDoctorsList", allDoctorsList);
+
 		return "add-patient-form";
 	}
 

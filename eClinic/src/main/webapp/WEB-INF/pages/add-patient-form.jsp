@@ -29,6 +29,8 @@
 
 			<form:form action="saveNewPatient" modelAttribute="addedPatient"
 				method="POST">
+				
+				<form:hidden path="patientId" />
 
 				<table>
 					<tr>

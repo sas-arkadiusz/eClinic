@@ -43,6 +43,7 @@
 						<th>Is Insurance</th>
 						<th>First Visit</th>
 						<th>Last Visit</th>
+						<th></th>
 
 					</tr>
 

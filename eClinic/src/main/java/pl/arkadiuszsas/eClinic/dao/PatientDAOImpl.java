@@ -19,50 +19,55 @@ public class PatientDAOImpl implements PatientDAO {
 
 	@Autowired
 	private SessionFactory sessionFactory; // injected hibernate session factory
-		
+
 	@Override
 	public List<Patient> getPatients() {
-		
+
 		// get the current hibernate session
 		Session currentHibernateSession = sessionFactory.getCurrentSession();
-		
+
 		Query<Patient> hqlQuery = currentHibernateSession.createQuery("from Patient", Patient.class);
-		
+
 		// get the result of the query list
 		List<Patient> allPatients = hqlQuery.getResultList();
-		
+
 		return allPatients;
 	}
 
 	@Override
 	public void savePatient(Patient addedPatient) {
-		
+
 		// get the current hibernate session
 		Session currentHibernateSession = sessionFactory.getCurrentSession();
-			
+
 		// find and set proper patientId
-		Query hqlQuery = currentHibernateSession.createQuery("select max(patientId) from Patient", Integer.class);
-		Integer lastPatientId = (Integer)hqlQuery.getSingleResult();
-		addedPatient.setPatientId(lastPatientId + 1);	
-		
-		hqlQuery = currentHibernateSession.createQuery("select max(fileId) from Patient", Integer.class);
-		Integer lastFileId = (Integer)hqlQuery.getSingleResult();
-		addedPatient.setFileId(lastFileId + 1);
-		
+		if (addedPatient.getPatientId() == 0) {
+			/*Query hqlQuery = currentHibernateSession.createQuery("select max(patientId) from Patient", Integer.class);
+			Integer lastPatientId = (Integer) hqlQuery.getSingleResult();
+			addedPatient.setPatientId(lastPatientId + 1);*/
+
+			Query hqlQuery = currentHibernateSession.createQuery("select max(fileId) from Patient", Integer.class);
+			Integer lastFileId = (Integer) hqlQuery.getSingleResult();
+			addedPatient.setFileId(lastFileId + 1);
+		}
+		else {
+			Query hqlQuery = currentHibernateSession.createQuery("select fileId from Patient where patientId = " + addedPatient.getPatientId(), Integer.class);
+			Integer currentPatientFileId = (Integer) hqlQuery.getSingleResult();
+			addedPatient.setFileId(currentPatientFileId);
+		}
 		// save the addedPatient
-		currentHibernateSession.save(addedPatient);
-		
+		currentHibernateSession.saveOrUpdate(addedPatient);
 	}
 
 	@Override
 	public Patient getPatient(int patientId) {
-		
+
 		// get the current hibernate session
 		Session currentHibernateSession = sessionFactory.getCurrentSession();
-		
+
 		// retrieve the requested Patient
 		Patient requestedPatient = currentHibernateSession.get(Patient.class, patientId);
-		
+
 		return requestedPatient;
 	}
 
