@@ -26,7 +26,7 @@ public class PatientDAOImpl implements PatientDAO {
 		// get the current hibernate session
 		Session currentHibernateSession = sessionFactory.getCurrentSession();
 
-		Query<Patient> hqlQuery = currentHibernateSession.createQuery("from Patient", Patient.class);
+		Query<Patient> hqlQuery = currentHibernateSession.createQuery("from Patient order by lastName", Patient.class);
 
 		// get the result of the query list
 		List<Patient> allPatients = hqlQuery.getResultList();
@@ -69,6 +69,21 @@ public class PatientDAOImpl implements PatientDAO {
 		Patient requestedPatient = currentHibernateSession.get(Patient.class, patientId);
 
 		return requestedPatient;
+	}
+
+	@Override
+	public void deletePatient(int patientId) {
+		
+		// get the current hibernate session
+		Session currentHibernateSession = sessionFactory.getCurrentSession();
+		
+		// delete the Patient
+		Query hqlQuery = currentHibernateSession.createQuery("delete from Patient where patientId = :deletedPatientId");
+		
+		hqlQuery.setParameter("deletedPatientId", patientId);
+		
+		hqlQuery.executeUpdate();
+		
 	}
 
 }

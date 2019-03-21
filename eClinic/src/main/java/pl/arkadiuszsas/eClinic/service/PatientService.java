@@ -11,4 +11,6 @@ public interface PatientService {
 	public void savePatient(Patient addedPatient);
 
 	public Patient getPatient(int patientId);
+
+	public void deletePatient(int patientId);
 }

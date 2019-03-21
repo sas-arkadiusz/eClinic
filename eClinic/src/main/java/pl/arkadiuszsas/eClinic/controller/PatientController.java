@@ -75,5 +75,13 @@ public class PatientController {
 
 		return "add-patient-form";
 	}
+	
+	@GetMapping("/deletePatient")
+	public String deletePatient(@RequestParam("deletedPatientId") int deletedPatientId) {
+		
+		patientService.deletePatient(deletedPatientId);
+		
+		return "redirect:/patient/showAllPatients";
+	}
 
 }

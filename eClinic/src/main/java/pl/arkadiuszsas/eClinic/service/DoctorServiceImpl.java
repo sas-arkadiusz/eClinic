@@ -40,8 +40,7 @@ public class DoctorServiceImpl implements DoctorService {
 	@Transactional
 	public void deleteDoctor(int doctorId) {
 		
-		doctorDAO.deleteDoctor(doctorId);
-		
+		doctorDAO.deleteDoctor(doctorId);		
 	}
 
 }
