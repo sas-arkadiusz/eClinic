@@ -1,6 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	
+<!-- Spring MVC support for forms -->
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+	
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html>
 
@@ -24,6 +29,15 @@
 		</form>
 		<input class="add-button" type="button" value="Add Doctor"
 			onclick="window.location.href='addDoctorForm'; return false;">
+			
+		<div class="search">
+			<form:form action="search" method="GET">
+				<input type="text" name="requestesDoctorLastName">
+				<input class="search-button" type="submit" value="Search">
+			</form:form>
+		</div>
+		
+		<br><br>
 
 		<div id="data">
 

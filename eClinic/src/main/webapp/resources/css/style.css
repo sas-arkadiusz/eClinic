@@ -48,11 +48,31 @@ body, html {
    	margin-right:5px;
 }
 
-.add-button:hover {
-	background-color: #a6a6a6;
+.search input[type="submit"] {
+	background-color: #cccccc;
+	border: 1px solid #4d4d4d;
+	border-radius: 11px;
+	font-size: 17px;
+	padding: 6px 31px;
+	margin-right:5px;
 }
 
-#data {
+.search input[type="submit"]:hover {
+	background-color: #a6a6a6;
+	cursor: pointer;
+}
+
+.search input[type="text"] {
+	font-size: 17px;
+	width: 232px;
+}
+
+.add-button:hover {
+	background-color: #a6a6a6;
+	cursor: pointer;
+}
+
+.search {
 	clear: both;
 }
 
