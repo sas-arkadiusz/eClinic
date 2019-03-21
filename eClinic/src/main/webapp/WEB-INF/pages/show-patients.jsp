@@ -48,6 +48,10 @@
 
 					<c:forEach var="thePatient" items="${ allPatientsList }">
 
+						<c:url var="updateLink" value="updatePatientForm">
+							<c:param name="updatedPatientId" value="${ thePatient.patientId }" />
+						</c:url>
+
 						<tr>
 							<td>${ thePatient.firstName }</td>
 							<td>${ thePatient.lastName }</td>
@@ -62,8 +66,7 @@
 							<td>${ thePatient.isInsurance}</td>
 							<td>${ thePatient.firstVisitDate }</td>
 							<td>${ thePatient.lastVisitDate }</td>
-
-							<!-- Missing one attribute: doctorID -->
+							<td><a href="${ updateLink }">Update</a></td>
 
 						</tr>
 

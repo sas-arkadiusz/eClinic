@@ -9,4 +9,6 @@ public interface PatientService {
 	public List<Patient> getPatients();
 
 	public void savePatient(Patient addedPatient);
+
+	public Patient getPatient(int patientId);
 }

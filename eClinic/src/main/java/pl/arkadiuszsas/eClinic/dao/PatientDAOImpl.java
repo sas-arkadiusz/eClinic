@@ -54,4 +54,16 @@ public class PatientDAOImpl implements PatientDAO {
 		
 	}
 
+	@Override
+	public Patient getPatient(int patientId) {
+		
+		// get the current hibernate session
+		Session currentHibernateSession = sessionFactory.getCurrentSession();
+		
+		// retrieve the requested Patient
+		Patient requestedPatient = currentHibernateSession.get(Patient.class, patientId);
+		
+		return requestedPatient;
+	}
+
 }

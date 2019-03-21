@@ -29,4 +29,11 @@ public class PatientServiceImpl implements PatientService {
 		patientDAO.savePatient(addedPatient);
 	}
 
+	@Override
+	@Transactional
+	public Patient getPatient(int patientId) {
+
+		return patientDAO.getPatient(patientId);		
+	}
+
 }
