@@ -83,5 +83,15 @@ public class PatientController {
 		
 		return "redirect:/patient/showAllPatients";
 	}
+	
+	@GetMapping("/searchPatient")
+	public String searchPatients(@RequestParam("requestedPatientLastName") String patientsLastName, Model theModel) {
+		
+		List<Patient> searchedPatientsList = patientService.searchPatients(patientsLastName);
+		
+		theModel.addAttribute("allPatientsList", searchedPatientsList);
+		
+		return "show-patients";
+	}
 
 }

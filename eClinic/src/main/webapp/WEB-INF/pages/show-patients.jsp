@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+
+<!-- Spring MVC support for forms -->
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -24,6 +28,15 @@
 		</form>
 		<input class="add-button" type="button" value="Add Patient"
 			onclick="window.location.href='addPatientForm'; return false;">
+
+		<div class="search">
+			<form:form action="searchPatient" method="GET">
+				<input type="text" name="requestedPatientLastName">
+				<input class="search-button" type="submit" value="Search">
+			</form:form>
+		</div>
+
+		<br><br>
 
 		<div id="data">
 
@@ -50,11 +63,13 @@
 					<c:forEach var="thePatient" items="${ allPatientsList }">
 
 						<c:url var="updateLink" value="updatePatientForm">
-							<c:param name="updatedPatientId" value="${ thePatient.patientId }" />
+							<c:param name="updatedPatientId"
+								value="${ thePatient.patientId }" />
 						</c:url>
-						
+
 						<c:url var="deleteLink" value="deletePatient">
-							<c:param name="deletedPatientId" value="${ thePatient.patientId }" />
+							<c:param name="deletedPatientId"
+								value="${ thePatient.patientId }" />
 						</c:url>
 
 						<tr>
@@ -73,8 +88,8 @@
 							<td>${ thePatient.lastVisitDate }</td>
 							<td><a href="${ updateLink }">Update</a></td>
 							<td><a href="${ deleteLink }"
-								   onclick="if (!(confirm('Are you sure you want to delete this patient? This operation can not be undone.'))) return false;">
-							Delete</a></td>
+								onclick="if (!(confirm('Are you sure you want to delete this patient? This operation can not be undone.'))) return false;">
+									Delete</a></td>
 
 						</tr>
 

@@ -78,7 +78,8 @@ public class DoctorDAOImpl implements DoctorDAO {
 		
 		if(doctorsLastName != null && doctorsLastName.trim().length() > 0) {
 			
-			hqlQuery = currentHibernateSesssion.createQuery("from Doctor where lower(lastName) like :doctorsLastName", Doctor.class);
+			hqlQuery = currentHibernateSesssion.createQuery(
+					"from Doctor where lower(lastName) like :doctorsLastName", Doctor.class);
 			hqlQuery.setParameter("doctorsLastName", doctorsLastName.toLowerCase());			
 		}
 		else {

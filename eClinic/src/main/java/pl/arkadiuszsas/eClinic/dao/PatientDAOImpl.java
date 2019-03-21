@@ -86,4 +86,27 @@ public class PatientDAOImpl implements PatientDAO {
 		
 	}
 
+	@Override
+	public List<Patient> searchPatients(String patientsLastName) {
+		
+		// get the current hibernate session
+		Session currentHibernateSession = sessionFactory.getCurrentSession();
+		
+		Query hqlQuery = null;
+		
+		if(patientsLastName != null && patientsLastName.trim().length() > 0) {
+			
+			hqlQuery = currentHibernateSession.createQuery(
+					"from Patient where lower(lastName) like :patientsLastName", Patient.class);
+			hqlQuery.setParameter("patientsLastName", patientsLastName.toLowerCase());
+		}
+		else {
+			hqlQuery = currentHibernateSession.createQuery("from Patient", Patient.class);
+		}
+		
+		List<Patient> requestedPatientsList = hqlQuery.getResultList();
+		
+		return requestedPatientsList;
+	}
+
 }
