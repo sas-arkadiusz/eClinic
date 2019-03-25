@@ -28,8 +28,11 @@ This project is created with:
 
 ## Application
 
-* Create Function -> eg. Add Patient Form: <br><br>
-![add-patient-form](https://i.imgur.com/3xgf2X6.gif) <br>
+* Read and Search Function -> eg. Show All Doctors: <br><br>
+![show-all-doctors](https://i.imgur.com/cNCql23.gif) <br>
 
-* Read Function -> eg. Show All Doctors: <br><br>
-![show-all-doctors](https://i.imgur.com/UrAWC7V.gif) <br>
+* Create Function -> eg. Add Patient Form: <br><br>
+![add-patient-form](https://i.imgur.com/CYWyn35.gif) <br>
+
+* Update Function -> Update Doctor: <br><br>
+![update-doctor]() <br>
