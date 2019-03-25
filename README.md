@@ -9,7 +9,7 @@
 
 ## eClinic - General Info
 This repository contains web application for managing a clinic. <br>
-At the end of the programming process, the application will implement all of the CRUD functions.
+All of the CRUD functions have been implemented in the application.
 
 ## Technologies
 This project is created with:
