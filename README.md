@@ -34,10 +34,10 @@ This project is created with:
 * Create Function -> eg. Add Patient Form: <br><br>
 ![add-patient-form](https://i.imgur.com/CYWyn35.gif) <br>
 
-* Update Function -> Update Doctor: <br><br>
+* Update Function -> eg. Update Doctor: <br><br>
 ![update-doctor](https://i.imgur.com/YmpZEwB.gif) <br>
 
-* Delete Function -> Delete Patient: <br><br>
+* Delete Function -> eg. Delete Patient: <br><br>
 ![delete-patient](https://i.imgur.com/GaEsoB0.gif) <br>
 
 
